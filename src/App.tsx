@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { createCategories } from './helpers/createCategories'
 import { HTTP_ADDRESS } from './variables/urls'
 
 import axios from 'axios'
@@ -32,6 +33,10 @@ const App = (): JSX.Element => {
     }
     fetchData()
   }, [])
+
+  const categories = createCategories(products)
+
+  console.log(categories)
 
   return <div></div>
 }
